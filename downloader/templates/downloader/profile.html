@@ -1,0 +1,49 @@
+{% extends 'downloader/base.html' %}
+{% block title %}Profile:{{user.username}}{% endblock %}
+{% block content %}
+<div class="row">
+	<div class="container-fluid">
+		<div class="col-xs-12 col-md-12 photo">
+			<br>
+			<center>
+				<div class="photo-div">
+					<img src="http://i.imgur.com/8ka8RPi.png" class="img img-responsive" style="width:100%;height:100%;"/>
+				</div>
+			</center>
+			<br>
+			<center>
+				<div class="information">
+					<span class="profileText">Username : <i>{{user.username}}</i></span>
+					<br>
+					<span class="profileText">Email : <i>{{user.email}}</i></span>	
+				</div>
+			</center>
+		</div>
+	</div>
+</div>
+<h2 class="allheads">Previous Downloads</h2>
+<table class="table table-striped">
+	<thead>
+		<th>Previous Downloads</th>
+		<th>Linked Video</th>
+		<th>Date of Download</th>
+	</thead>
+	{% for video in all_video|slice:':6' %}
+	<tr>
+		<td class="link-vid"><a href="{{ video.video }}" target="_blank">{{ video.video }}</a></td>
+		<td class="vid">
+			<div class="row">
+			  <div class="col-sm-12">
+			    <div class="bs-example" data-example-id="responsive-embed-16by9-iframe-youtube">
+			      <div class="embed-responsive embed-responsive-4by3">
+			        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ video.video|slice:'32:' }}"></iframe>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		</td>
+		<td class="date-vid">{{ video.date }}</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock %}

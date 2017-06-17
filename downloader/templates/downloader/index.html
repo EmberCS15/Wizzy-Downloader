@@ -1,0 +1,101 @@
+{% extends 'downloader/base.html'%}
+
+{% block title %}Wizzy Downloader{% endblock %}
+
+{% block content%}
+<div class="mainEntry">
+<h1 class="allheads"><strong>Wizzy Downloader</strong></h1>
+	<div id="typed-strings">
+		<p>Download Videos</p><p><em>Free</em> Downloads</p><p>YouTube <strong>Dechiphered</strong></p>
+	</div>
+	<div id="typecon"><span id="typed"></span></div>
+</div>
+<hr><hr><hr>
+<br><br>
+<div class="row fact-1 divcons">
+	<div class="container">
+		<div class="col-md-6">
+			<br><br><br><br><br><br>
+			<p>Free Download of any youtube video.</p>
+			<p style="text-align:right">Grab the link Paste It and <em>Viola!</em></p>
+			<p>High quality video downloaded.</p>
+			<p style="text-align:right">Very Simple and UserFriendly UI </p>
+		</div>
+		<div class="col-md-5 col-md-offset-1">
+			<img src="http://i.imgur.com/9bGaJxr.png" alt="image not loaded" class="img img-responsive" height=400 width=400>
+			<br><br>
+		</div>
+	</div>
+</div>
+<div class="row fact-2 divcons">
+<br><br><br><br>
+	<div class="container">
+		<div class="col-md-5">
+			<img src="http://i.imgur.com/TNWfKIm.png" alt="image not loaded" class="img img-responsive" height=400 width=400>
+			<br><br><br><br>
+		</div>
+		<div class="col-md-6  col-md-offset-1">
+			<br><br>
+			<p>Create your own <em>Account</em></p>
+			<p style="text-align:right">Maintain a list of all your Downloads</p>
+			<p>Easily revisit downloaded links on <em>YouTube</em></p>
+			<p style="text-align:right">Sign Up now to enjoy other benefits</p>
+			<br><br>
+		</div>
+	</div>
+</div>
+<div class="row fact-3">
+<br><br><br><br>
+	<div class="container">
+		<div class="col-md-4">
+			<div class="footerCons">
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://www.shareicon.net/download/2016/11/14/852208_download_512x512.png" width=300 height=300>
+				<p class="footText"><a href="{% url 'downloader:details' %}">Go to the Downloader Page</a></p>
+				<br>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="footerCons">
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://image.freepik.com/free-icon/user-check-interface-symbol_318-60830.jpg" width=300 height=300>
+				<p class="footText"><a href="{% url 'downloader:profile' %}">Visit Profile Page</a></p>
+				<br>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="footerCons">
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://www.youtube.com/yt/brand/media/image/YouTube-logo-dark.png" width=300 height=300>
+				<p class="footText"><a href="https://www.youtube.com/" target="_blank">Visit YouTube</a></p>
+				<br>
+			</div>
+		</div>
+	</div>
+	<br><br>
+</div>
+<div class="footerElement">
+	<p class="footText" style="color:white">This site has been completely developed in <strong>Django Framework</strong></p>
+</div>
+<script>
+var images = ["http://i.imgur.com/vfwvVg6.jpg","http://i.imgur.com/aa9dQbT.jpg","http://i.imgur.com/hB9BkIl.png","http://i.imgur.com/MrCK2sg.jpg","http://i.imgur.com/AF5I0JZ.png","http://i.imgur.com/A8HX0SH.png","http://i.imgur.com/1bCpo8q.jpg","http://i.imgur.com/gKIUh1g.png"];
+var index = 1;
+document.addEventListener('DOMContentLoaded', function(){
+		Typed.new('#typed', {
+			stringsElement: document.getElementById('typed-strings')
+		});
+});
+
+$(document).ready(function(){
+	$(".allheads").addClass("animated tada");
+	function slider(){
+		$(".mainEntry").css("background-image","url('"+images[index]+"')");
+		index++;
+		if(index === images.length)
+			index=0;
+	}
+	setInterval(slider,5000);
+});
+
+</script>
+{% endblock %}

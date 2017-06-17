@@ -1,0 +1,132 @@
+body{
+	background-color:black;
+}
+.brandText{
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+    font-size: 200%;
+}
+.navbar-light .navbar-toggle .icon-bar {
+    background-color: white;
+}
+.topText{
+    font-family: 'Barrio', cursive;
+    letter-spacing: 2px;
+}
+.allheads{
+	text-align:center;
+	font-family:'Tangerine' sans-serif;
+	color:red;
+	text-shadow: 1px 2px 1px;
+}
+.regHead{
+	color:#00ff00;
+    text-align: center;
+    /*font-family: 'Playfair Display SC', serif;*/
+    font-family: 'Aldrich', sans-serif;
+    /*font-family: 'Merienda', cursive;*/
+}
+label{
+	color:black;
+}
+#typecon{
+	text-align:center;
+	color:white;
+}
+#typed{
+	font-family:'Play' sans-serif;
+	font-size:150%;
+}
+.mainEntry{
+	background-image: url('http://i.imgur.com/vfwvVg6.jpg');
+	background-repeat: no-repeat;
+	background-size:100% 100%;
+	height:700px;
+}
+.fact-1 img{
+	border-radius:30px;
+}
+.fact-1 p{
+	color:white;
+	font-size:180%;
+	/*font-family: 'Indie Flower', cursive;*/
+    font-family: 'Roboto Mono', monospace;
+}
+.fact-2{
+	background-color: #00004d;
+}
+.fact-2 p{
+	color:white;
+	font-size:140%;
+	/*font-family: 'Indie Flower', cursive;*/
+    font-family: 'Roboto Mono', monospace;
+}
+.fact-3{
+	background-color: #ccffcc;
+}
+.divcons{
+	transition:0.5s;
+}
+.divcons:hover{
+	transform: scale(1.05,1.05);
+}
+.footerCons{
+	border-radius: 60px;
+	background-color:white;
+	box-shadow:2px 2px 2px 2px rgba(0,0,0,0.5);
+	/*border:2px solid black;*/
+}
+.footerCons:hover{
+	border:5px solid black;
+}
+.footText{
+	text-align: center;
+	font-size: 130%;
+	font-family: 'Oxygen', sans-serif;
+}
+#downloadField{
+	border-radius:20px;
+	margin-left:150px;
+	width:64%;
+	padding:10px;
+}
+.downloadBtn{
+	padding:10px;
+	margin-left:10px;
+	font-size:140%;
+}
+.videoDiv{
+	min-height: 332px;
+	max-height: 332px;
+	opacity:0.0;
+}
+.infoDiv{
+	min-height: 332px;
+	max-height: 332px;
+	opacity:0.0;
+	overflow-y: scroll;
+	overflow: auto;
+}
+.info{
+	font-size:130%;
+	font-weight: bold;
+	text-align: center;
+}
+.photo{
+	background-color:green;
+}
+.photo-div{
+	width:15%;
+	height:180px;
+	background-color:blue;
+}
+.table{
+	background-color:white; 
+}
+td,th{
+	padding:10px;
+}
+.profileText{
+	font-size:140%;
+	color:white;
+}

@@ -1,0 +1,62 @@
+{% extends 'downloader/base.html'%}
+
+{% block title %}Wizzy YouTube Downloader{% endblock %}
+
+{% block content%}
+
+{% if message %}
+	<script>window.alert("{{message}}")</script>
+{% endif %}
+
+<h1 class="allheads">Make a Wizzy Download ...... </h1>
+<form action="{% url 'downloader:download' %}" method="get">
+	{% csrf_token %}
+	<input type="text" name="url" id="downloadField" placeholder="Enter the URL to be Downloaded" />
+	<input type="button" class="btn btn-success downloadBtn" id="CheckBtn" value="Check URL"/> 
+	<input type="submit" class="btn btn-success downloadBtn" value="Download"/> 
+</form>
+<br><br><br>
+<p class="error" style="text-align:center;color:red;font-size:130%"></p>
+<br><br>
+<div class="row">
+	<div class="container">
+		<div class="col-md-5 col-md-offset-1 videoDiv" style="background-color: red;">
+		</div>
+		<div class="col-md-4 infoDiv" style="background-color: white;">
+		</div>
+	</div>
+</div>
+<script>
+$(document).ready(function(){
+	$("#CheckBtn").on("click",function(){
+		var dn_str = $("#downloadField").val();
+		console.log(dn_str);
+		var re = /https:\/\/www\.youtube\.com\/watch\?v=/;
+		var bool = re.test(dn_str);
+		if(bool){
+			$(".videoDiv").css("opacity","1.0");
+			$(".infoDiv").css("opacity","1.0");
+			var ifr_str = "https://www.youtube.com/embed/";
+			ifr_str += dn_str.substring(dn_str.indexOf("?")+3);
+			console.log(ifr_str); 
+			var str_html="<div class='embed-responsive embed-responsive-4by3'><iframe class='embed-responsive-item' src='"+ifr_str+"'></iframe></div>";
+			$.ajax({
+				url: "https://crossorigin.me/"+dn_str,
+     			dataType: 'html',
+     			//type : "post",
+     			success: function(data) {
+			     		var title = $(data).find("#eow-title").text();
+			     		$(".infoDiv").html("<p class='info'><strong>"+title+"<br><p>Click on download to download the best quality mp4</strong></p></p>");
+			    }
+			});
+			$(".videoDiv").html("");
+			$(".error").html("");
+			$(".videoDiv").html(str_html);
+		}else{
+			$(".error").html("<strong>Please enter a valid url</strong>");
+		}	
+		//console.log(bool);
+	});
+});
+</script>
+{% endblock %}
