@@ -1,6 +1,6 @@
 # Wizzy-Downloader
 A website which lets you download youtube videos and also maintain your profile and past downloads.This website has been developed using the Django Framework.
-### Wizzy Downloader : A Walkthrough
+### Wizzy Downloader : The Walkthrough
 ##### Home Page
 ![pink](https://user-images.githubusercontent.com/24290847/27255161-f5a03e1c-5387-11e7-9048-0eba2e1fba5a.png)
 ![screenshot from 2017-06-17 23-16-22](https://user-images.githubusercontent.com/24290847/27255162-fd40d64a-5387-11e7-93c2-b952cf886d08.png)
