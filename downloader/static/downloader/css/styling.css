@@ -15,7 +15,7 @@ body{
 }
 .allheads{
 	text-align:center;
-	font-family:'Tangerine' sans-serif;
+	font-family:'Tangerine',sans-serif;
 	color:red;
 	text-shadow: 1px 2px 1px;
 }
@@ -34,7 +34,7 @@ label{
 	color:white;
 }
 #typed{
-	font-family:'Play' sans-serif;
+	font-family:'Play',sans-serif;
 	font-size:150%;
 }
 .mainEntry{
