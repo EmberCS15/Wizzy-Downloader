@@ -40,10 +40,11 @@ def download(request):
 	id = request.GET['url']
 	#print("The String to be Downloaded is :: "+id)
 	try:
-		yt = YouTube(id)
+		yt = YouTube(str(id)).streams.first().download()
+		#yt = YouTube(id)
 		#print(" Video : "+str(yt.filter('mp4')[-1]))
-		video = yt.filter('mp4')[-1]
-		video.download('/tmp/')
+		#video = yt.filter('mp4')[-1]
+		#video.download('/tmp/')
 		message="Download Complete"
 		#putting the song into the database
 		name = request.session["curr_user"]
