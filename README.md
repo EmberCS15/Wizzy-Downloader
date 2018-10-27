@@ -23,6 +23,8 @@ And Thats about all you would need to know to get you started.Cheers!!
 1.Web Framework : Django<br>
 2.Front-end : Bootstrap , jQuery
 
+###Contributions
+Please feel free to create issues and PR's to improve this project.
 
 
 
